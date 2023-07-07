@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.talenthubapp.databinding.ActivityMainBinding
+import com.example.talenthubapp.exercisenavcomponent.MainNavComponentActivity
+import com.example.talenthubapp.viewpager.MainTabLayoutActivity
 
     class MainActivity : AppCompatActivity() {
 
@@ -31,6 +33,17 @@ import com.example.talenthubapp.databinding.ActivityMainBinding
                 val i = Intent(this, SecondMainActivity::class.java)
                 startActivity(i)
             }
+
+            binding.btnMoveToNavComponent.setOnClickListener {
+                val i = Intent(this, MainNavComponentActivity::class.java)
+                startActivity(i)
+            }
+
+            binding.btnMoveToViewPager.setOnClickListener {
+                val i = Intent(this, MainTabLayoutActivity::class.java)
+                startActivity(i)
+            }
+
         }
 
 
