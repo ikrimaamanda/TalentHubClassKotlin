@@ -29,7 +29,7 @@ class SecondMainActivity : AppCompatActivity() {
         binding.rvListName.layoutManager = LinearLayoutManager(this)
         binding.rvListName.adapter = rvOfNameAdapter
 
-        rvOfNameAdapter.addedListOfName(listNames)
+//        rvOfNameAdapter.addedListOfName(listNames)
 
     }
 

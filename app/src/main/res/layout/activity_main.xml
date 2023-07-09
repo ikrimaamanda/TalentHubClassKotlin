@@ -48,4 +48,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"/>
 
+    <Button
+        android:id="@+id/btn_move_to_list_github_users"
+        android:text="Move to List GitHub Users"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_move_to_view_pager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

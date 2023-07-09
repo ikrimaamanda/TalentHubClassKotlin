@@ -1,36 +1,39 @@
 package com.example.talenthubapp
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.talenthubapp.databinding.ItemShowNameBinding
+import com.example.talenthubapp.networking.UserGitHubModel
 
 class RecyclerviewOfNameAdapter : RecyclerView.Adapter<RecyclerviewOfNameAdapter.RecyclerviewOfNameViewHolder>() {
 
-    private var listOfName = ArrayList<String>()
+    private var listOfName = ArrayList<UserGitHubModel>()
 
 
-    fun addedListOfName(list : List<String>) {
+    fun addedListOfUsers(list : List<UserGitHubModel>) {
         this.listOfName.clear()
         this.listOfName.addAll(list)
         notifyDataSetChanged()
     }
 
 
-    inner class RecyclerviewOfNameViewHolder(val binding : ItemShowNameBinding) : RecyclerView.ViewHolder(
+    inner class RecyclerviewOfNameViewHolder(private val binding : ItemShowNameBinding) : RecyclerView.ViewHolder(
         binding.root
     ) {
         fun bind(position : Int) {
             val itemNow = listOfName[position]
-            binding.tvNameItemShowName.text = itemNow
+            binding.tvItemShowName.text = itemNow.userName
+
+            Glide
+                .with(itemView.context)
+                .load(itemNow.avatarURL)
+                .into(binding.ivItemShowName)
 
             binding.layoutItemShowName.setOnClickListener {
-                Toast.makeText(itemView.context, itemNow, Toast.LENGTH_SHORT).show()
-
-                val i = Intent(itemView.context, MainActivity::class.java)
-                itemView.context.startActivity(i)
+                Toast.makeText(itemView.context, itemNow.userName, Toast.LENGTH_SHORT).show()
             }
         }
     }

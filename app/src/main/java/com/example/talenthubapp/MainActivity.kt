@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.talenthubapp.databinding.ActivityMainBinding
 import com.example.talenthubapp.exercisenavcomponent.MainNavComponentActivity
+import com.example.talenthubapp.networking.HomeListUsersActivity
 import com.example.talenthubapp.viewpager.MainTabLayoutActivity
 
     class MainActivity : AppCompatActivity() {
@@ -41,6 +42,11 @@ import com.example.talenthubapp.viewpager.MainTabLayoutActivity
 
             binding.btnMoveToViewPager.setOnClickListener {
                 val i = Intent(this, MainTabLayoutActivity::class.java)
+                startActivity(i)
+            }
+
+            binding.btnMoveToListGithubUsers.setOnClickListener {
+                val i = Intent(this, HomeListUsersActivity::class.java)
                 startActivity(i)
             }
 

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.TalentHubApp"
         tools:targetApi="31">
         <activity
+            android:name=".networking.HomeListUsersActivity"
+            android:exported="false" />
+        <activity
             android:name=".viewpager.MainTabLayoutActivity"
             android:exported="false" />
         <activity
