@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "815115489321",
+    "project_id": "talenthub-class-app",
+    "storage_bucket": "talenthub-class-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815115489321:android:43e51a5f4d10b2913b8c38",
+        "android_client_info": {
+          "package_name": "com.example.talenthubapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815115489321-2ho938dec9md3n5meg9hce5dta10g2a9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAluzYvsE3n1yE99nHBvohNu8qNdvYku2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815115489321-2ho938dec9md3n5meg9hce5dta10g2a9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

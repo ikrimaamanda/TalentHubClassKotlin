@@ -5,7 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.talenthubapp.databinding.ActivityMainBinding
 import com.example.talenthubapp.exercisenavcomponent.MainNavComponentActivity
+import com.example.talenthubapp.firebaserealtimedb.FirebaseRealtimeDBActivity
 import com.example.talenthubapp.networking.HomeListUsersActivity
+import com.example.talenthubapp.sharedpreferences.SharedPreferencesActivity
 import com.example.talenthubapp.viewpager.MainTabLayoutActivity
 
     class MainActivity : AppCompatActivity() {
@@ -47,6 +49,16 @@ import com.example.talenthubapp.viewpager.MainTabLayoutActivity
 
             binding.btnMoveToListGithubUsers.setOnClickListener {
                 val i = Intent(this, HomeListUsersActivity::class.java)
+                startActivity(i)
+            }
+
+            binding.btnMoveToSharedPreference.setOnClickListener {
+                val i = Intent(this, SharedPreferencesActivity::class.java)
+                startActivity(i)
+            }
+
+            binding.btnMoveToFirebaseRealtimeDb.setOnClickListener {
+                val i = Intent(this, FirebaseRealtimeDBActivity::class.java)
                 startActivity(i)
             }
 

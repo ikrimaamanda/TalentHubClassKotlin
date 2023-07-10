@@ -15,6 +15,12 @@
         android:theme="@style/Theme.TalentHubApp"
         tools:targetApi="31">
         <activity
+            android:name=".firebaserealtimedb.FirebaseRealtimeDBActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sharedpreferences.SharedPreferencesActivity"
+            android:exported="false" />
+        <activity
             android:name=".networking.HomeListUsersActivity"
             android:exported="false" />
         <activity
