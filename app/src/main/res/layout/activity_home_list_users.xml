@@ -6,21 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".networking.HomeListUsersActivity">
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_effect_github_users"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_list_users"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_shimmer_github_users"/>
+            <include layout="@layout/item_shimmer_github_users"/>
+            <include layout="@layout/item_shimmer_github_users"/>
+            <include layout="@layout/item_shimmer_github_users"/>
+            <include layout="@layout/item_shimmer_github_users"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <com.kennyc.view.MultiStateView
+        android:id="@+id/msv_list_github_user"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:msv_errorView="@layout/default_error_layout"
+        app:msv_emptyView="@layout/default_empty_layout"
+        app:msv_loadingView="@layout/default_loading_layout"
+        app:msv_viewState="content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_list_users"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.kennyc.view.MultiStateView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

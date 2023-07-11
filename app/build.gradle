@@ -67,4 +67,10 @@ dependencies {
     // logging interceptor by OkHttp
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
 
+    // multi-state view
+    implementation  'com.github.Kennyc1012:MultiStateView:2.2.0'
+
+    // shimmer effect
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
 }

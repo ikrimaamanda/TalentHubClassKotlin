@@ -7,6 +7,10 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.talenthubapp.RecyclerviewOfNameAdapter
 import com.example.talenthubapp.databinding.ActivityHomeListUsersBinding
+import com.example.talenthubapp.helper.showContentState
+import com.example.talenthubapp.helper.showEmptyState
+import com.example.talenthubapp.helper.showErrorState
+import com.example.talenthubapp.helper.showLoadingState
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,8 +50,11 @@ class HomeListUsersActivity : AppCompatActivity() {
                     val responseBody = response.body()
                     if (!responseBody.isNullOrEmpty()) {
                         rvAdapter.addedListOfUsers(responseBody)
+                    } else {
+                        binding.msvListGithubUser.showEmptyState("Data tidak ditemukan")
                     }
                 } else {
+                    binding.msvListGithubUser.showErrorState(response.message())
                     Log.e("failedGetListUser", "onFailed: ${response.message()}")
                 }
             }
@@ -55,6 +62,7 @@ class HomeListUsersActivity : AppCompatActivity() {
             override fun onFailure(call: Call<List<UserGitHubModel>>, t: Throwable) {
                 showLoading(false)
                 Log.e("failedGetListUser", "onFailed: ${t.message}")
+                binding.msvListGithubUser.showErrorState(t.message?:"Failure Get Data GitHub Users")
             }
 
         })
@@ -63,9 +71,13 @@ class HomeListUsersActivity : AppCompatActivity() {
 
     private fun showLoading(isShow : Boolean) {
         if (isShow) {
-            binding.progressBar.visibility = View.VISIBLE
+            binding.shimmerEffectGithubUsers.visibility = View.VISIBLE
+            binding.shimmerEffectGithubUsers.startShimmer()
+//            binding.msvListGithubUser.showLoadingState()
         } else {
-            binding.progressBar.visibility = View.GONE
+            binding.shimmerEffectGithubUsers.stopShimmer()
+            binding.shimmerEffectGithubUsers.visibility = View.GONE
+            binding.msvListGithubUser.showContentState()
         }
     }
 
